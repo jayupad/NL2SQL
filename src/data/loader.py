@@ -27,8 +27,7 @@ class Database:
         self.raw_data = raw_data
 
     def parse_contexts(self, raw_data) -> Dict[str, List[ColumnData]]:
-        """
-        Method to extracts all context information from raw data.
+        """Method to extracts all context information from raw data.
 
         Args:
             raw_data (str): unfiltered data from the external dataset
@@ -39,8 +38,7 @@ class Database:
         raise NotImplementedError()
 
     def parse_queries(self, raw_data) -> List[QueryPair]:
-        """
-        Method to extract all SQL queries and corresponding natural language prompts from raw data
+        """Method to extract all SQL queries and corresponding natural language prompts from raw data
 
         Args:
             raw_data (str): unfiltered data from the external dataset
@@ -51,8 +49,7 @@ class Database:
         raise NotImplementedError()
     
     def parse_documentation(self) -> Dict[str, str]:
-        """
-        A method to extract SQL operator documentation from raw data for RAG implementation
+        """Method to extract SQL operator documentation from raw data for RAG implementation
 
         Args:
             raw_data (str): unfiltered data from the external dataset
@@ -63,8 +60,7 @@ class Database:
         raise NotImplementedError()
     
     def synthesize_query(self, contexts: List[str]):
-        """
-        A method to generate a SQL query utilizing given contexts
+        """Method to generate a SQL query utilizing given contexts
 
         Args:
             contexts (list): unfiltered data from the external dataset
