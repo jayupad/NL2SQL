@@ -19,29 +19,28 @@ class QueryPair:
 class Database:
     """Stores the contexts, query pairs, and relevant SQL documentation parsed from an external dataset 
     """
-    def __init__(self, raw_data):
+    def __init__(self, raw_data: str):
+        """Initializes database with data from an external dataset (Spider2 in our case)
+
+        Args:
+            raw_data (str): unfiltered data from the external dataset
+        """
 
         self.contexts = {}
         self.query_pairs = []
         self.documents = []
         self.raw_data = raw_data
 
-    def parse_contexts(self, raw_data) -> Dict[str, List[ColumnData]]:
+    def parse_contexts(self) -> Dict[str, List[ColumnData]]:
         """Method to extracts all context information from raw data.
-
-        Args:
-            raw_data (str): unfiltered data from the external dataset
 
         Returns:
             dict: A dictionary mapping table names to a list of their columns
         """
         raise NotImplementedError()
 
-    def parse_queries(self, raw_data) -> List[QueryPair]:
+    def parse_queries(self) -> List[QueryPair]:
         """Method to extract all SQL queries and corresponding natural language prompts from raw data
-
-        Args:
-            raw_data (str): unfiltered data from the external dataset
 
         Returns:
             list: A list of prompt-query pairs
@@ -51,9 +50,6 @@ class Database:
     def parse_documentation(self) -> Dict[str, str]:
         """Method to extract SQL operator documentation from raw data for RAG implementation
 
-        Args:
-            raw_data (str): unfiltered data from the external dataset
-
         Returns:
             dict: A dictionary mapping SQL operators to their respective descriptions 
         """
@@ -61,9 +57,6 @@ class Database:
     
     def synthesize_query(self, contexts: List[str]):
         """Method to generate a SQL query utilizing given contexts
-
-        Args:
-            contexts (list): unfiltered data from the external dataset
 
         Returns:
             str: A SQL query utilizing a subset of the given contexts
