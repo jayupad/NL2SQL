@@ -8,13 +8,25 @@ from typing import List, Dict
 
 @dataclass
 class ColumnData:
+    """Represents the data represented by a column of a SQL Table
+
+    Attributes:
+        description: details on the information that is stored in the column 
+        data_type: dtype of the entries in the column
+    """
     description: str
     data_type: str
 
 @dataclass
 class QueryPair:
-    sql_query: str
-    nl_prompt: str
+    """Represents the data that models an input/output pair of the NL2SQL model
+
+    Attributes:
+        prompt: a natural language prompt or question corresponding to a SQL context
+        query: a SQL query that should provide the data to answer this prompt when executed
+    """
+    prompt: str
+    query: str
 
 class Database:
     """Stores the contexts, query pairs, and relevant SQL documentation parsed from an external dataset 
