@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" External Data Loader
+"""External Data Loader
 This module downloads and returns raw data from an external dataset, currently Spider2.
 """
 from retry import retry
