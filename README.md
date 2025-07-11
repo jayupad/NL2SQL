@@ -1,5 +1,5 @@
 # Natural Language to SQL
-<Description> 
+This project will convert natural language given context around the data and generate a working SQL query.  
 
 ## Docs   
 [Spec Document](doc-link)
@@ -13,8 +13,7 @@ Download the software locally by running
 ```console
 git clone git@github.com:jayupad/NL2SQL.git  
 ```
-The python version used in development is 3.12.
-Then, navigate to the directory and create the conda env `nl2sql` environment through the following commands.
+The python version used in development is 3.12. Then, navigate to the directory and create the conda env `nl2sql` environment through the following commands.  
 ```console
 conda create -n nl2sql python=3.12
 conda activate nl2sql
