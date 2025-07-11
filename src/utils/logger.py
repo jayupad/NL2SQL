@@ -54,13 +54,13 @@ warning = LOG.warning
 critical = LOG.critical
 
 
-def log_raise(log_type: str, error_message: str, error_type: error = ValueError) -> Any:
+def log_raise(log_type: str, error_message: str, error_type: Any = ValueError) -> Any:
   """This function will support raising an error message.
 
   Args:
     log_type (str): String indicating the type of log.
     error_message (str): String indicating the error message.
-    error_type (Error): Built in Python exceptions.
+    error_type (Error): Built in Python exceptions. Default ValueError.
 
   Raises:
     The assocaited exception passed in as error_type.
